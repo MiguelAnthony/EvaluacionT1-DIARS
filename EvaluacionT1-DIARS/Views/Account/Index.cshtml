@@ -1,0 +1,41 @@
+﻿<h1>Registri Persona</h1>
+
+<a href="/account/create">Registrar</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nacimiento</th>
+            <th>DNI</th>
+            <th>Sexo</th>
+            <th>Ciudad</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            var accounts = ((List<Account>)ViewBag.Account);
+        }
+        @for (var i = 0; i < accounts.Count; i++)
+        {
+            var item = accounts[i];
+            <td></td>
+            <tr>
+                <td> @item.Nombre </td>
+                <td>@item.Apellido</td>
+                <td>@item.Dia/@item.Mes/@item.Anio</td>
+                <td>@item.DNI</td>
+                <td>@item.Sexo</td>
+                <td>@item.Ciudad</td>
+                <td>@item.Direccion</td>
+                <td>@item.Correo</td>
+            </tr>
+         }
+        </tbody>
+
+</table>
+
